@@ -1,0 +1,324 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main h3 {
+    font-size: 1.2em;
+    color: #555;
+}
+
+main h4 {
+    font-size: 1em;
+    color: #777;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.container {
+    margin: 20px;
+}
+head {
+    position:relative;
+    top: 40%;
+    left: 900%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background-color: #fff;
+    padding: 15px;
+    border-right: 2px solid #3498db;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -220px; /* Hide initially */
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    left: 0; /* Show sidebar */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 40px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: #3498db;
+    color: #333;
+    font-size: 29px;
+    border: 5px solid #1208c5;      /* Border around text (adjust thickness, style, and color as needed) */
+}
+    .sidebar ul li a:hover {
+        background-color: #555;
+}
+
+
+
+.product-list, .training-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 150px; /* To avoid overlap with the sidebar */
+    flex: 1;
+}
+
+.product, .training {
+    background-color: white;
+    padding: 15px;
+    margin: 10px;
+    border: 10px solid #ccc;
+    border-radius: 15
+    %;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product img, .training img {
+    width: 100%; /* Set width to 100% */
+    height: auto;
+}
+
+.product h1, .training h2 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.product p, .training p {
+    font-size: 1em;
+    color: #555;
+}
+
+.product .price, .training .price {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+.floating-buttons {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1000;
+}
+
+.floating-buttons button {
+    display: block;
+    margin: 5px 0;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Circular shape */
+    cursor: pointer;
+    transform: rotate(45deg); /* Rhombus shape */
+}
+
+.cart {
+    position: fixed;
+    right: 220px; /* Adjusted to not overlap the floating buttons */
+    top: 50px; /* Adjusted to stay below the buttons */
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none; /* Hidden initially */
+    z-index: 1000;
+}
+
+.cart.active {
+    display: block; /* Show the cart when active */
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.cart-item .remove {
+    color: red;
+    cursor: pointer;
+}
+
+/* For small devices like phones (max-width: 600px) */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .product, .training {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .sidebar {
+        width: 100%; /* Full width for sidebar on phones */
+        position: relative; /* Change sidebar behavior */
+    }
+
+    .floating-buttons {
+        flex-direction: column;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .floating-buttons button {
+        margin-bottom: 10px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .cart {
+        width: 100%; /* Full width for cart on phones */
+    }
+}
+
+/* For tablets (min-width: 600px and max-width: 1024px) */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .product, .training {
+        width: 45%; /* Two items per row */
+        margin: 10px;
+    }
+
+    .floating-buttons {
+        flex-direction: row;
+    }
+
+    .floating-buttons button {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* For desktops and larger screens (min-width: 1024px) */
+@media only screen and (min-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    .product, .training {
+        width: 30%; /* Three items per row */
+        margin: 10px;
+    }
+
+    .sidebar {
+        width: 250px;
+        position: fixed;
+    }
+
+    .floating-buttons {
+        flex-direction: row;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .floating-buttons button {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cart {
+        width: 300px;
+    }
+}
+/* Dropdown styles for product page */
+.dropdown-toggle {
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin-left: 15px;
+}
+
+.dropdown-content li {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.show {
+    display: block;
+}

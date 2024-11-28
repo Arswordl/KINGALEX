@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow Your Social Media Accounts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Purchase Followers/Likes/Views and Comments</h1>
+        <a href="index.html" class="back-button">← Back to Products</a>
+    </header>
+
+    <div class="social-media-services">
+        <h3>
+            <li class="dropdown-toggle">Instagram followers</li>
+            <ul class="dropdown-content">
+                <li>1k followers - N5,000</li>
+                <li>5k followers - N20,000</li>
+                <li>10k followers - N40,000</li>
+            </ul>
+
+            <li class="dropdown-toggle">Telegram subscribers</li>
+            <ul class="dropdown-content">
+                <li>1k subscribers - N4,000</li>
+                <li>5k subscribers - N18,000</li>
+            </ul>
+
+            <li class="dropdown-toggle">Facebook followers</li>
+            <ul class="dropdown-content">
+                <li>1k followers - N3,500</li>
+                <li>5k followers - N15,000</li>
+            </ul>
+
+            <li class="dropdown-toggle">whatsapp group/channel members</li>
+            <ul class="dropdown-content">
+                <li>500 nigeria group\channel members - N12,700</li>
+                <li>1k nigeria group\channel members - N24,500</li>
+                <li>5k nigeria group\channel members - N96,000</li>
+                <ol>worldwide</ol>
+                <li>200 worldwide group\channel members - N4,000</li>
+                <li>50k nigeria group\channel members - N10,000</li>
+                <li>1k worldwide group\channel members - N19,900</li>
+            </ul>
+            <!-- Add similar dropdowns for other services as needed -->
+        </h3>
+    </div>
+
+    <script>
+        // JavaScript to toggle dropdowns on click
+        document.querySelectorAll('.dropdown-toggle').forEach(item => {
+            item.addEventListener('click', function() {
+                const dropdownContent = this.nextElementSibling;
+                dropdownContent.classList.toggle('show');
+
+                // Close other open dropdowns
+                document.querySelectorAll('.dropdown-content').forEach(content => {
+                    if (content !== dropdownContent) {
+                        content.classList.remove('show');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
