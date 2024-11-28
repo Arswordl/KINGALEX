@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <link rel="stylesheet" href="complete.css">
+</head>
+<body>
+  <div class="payment-container">
+    <h1>Transfer using the below bank account details</h1>
+    <h1>Payment Details</h1>
+    <div class="account-number">
+    <strong><b><p>Bank Name: <span>union bank</span></p></b></strong>
+    <strong> <p>Account Number: <span>0049142937</span></p></strong>
+    <strong><p> Name: <span>Adeola olamide</span></p></strong>
+    </div>
+    <div class="countdown">
+      <p>Transfer within: <span id="timer">6:00</span></p>
+    </div>
+    <button id="payment-btn" class="hidden">Payment Made</button>
+  </div>
+
+  <script>
+    // Countdown Timer
+    const timerElement = document.getElementById("timer");
+    const paymentButton = document.getElementById("payment-btn");
+
+    let time = 6 * 60; // 6 minutes in seconds
+
+    function updateTimer() {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+
+      timerElement.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+      time--;
+
+      if (time < 0) {
+        clearInterval(countdown);
+        paymentButton.classList.remove("hidden");
+      }
+    }
+
+    const countdown = setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
