@@ -1,3 +1,57 @@
+/* Responsive Design */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container, .product-list, .training-list, .cart {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h4, p {
+    margin: 10px 0;
+}
+
+.product, .training {
+    flex: 1 1 calc(100% - 20px); /* Full width by default */
+    margin: 10px;
+}
+
+@media (min-width: 600px) {
+    .product, .training {
+        flex: 1 1 calc(50% - 20px); /* Two columns on tablets */
+    }
+}
+
+@media (min-width: 900px) {
+    .product, .training {
+        flex: 1 1 calc(33.33% - 20px); /* Three columns on larger screens */
+    }
+}
+
+.floating-buttons button {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    margin: 5px 0;
+    z-index: 1000;
+    font-size: 1em;
+}
+
+.floating-buttons {
+    display: flex;
+    flex-direction: column;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
