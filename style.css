@@ -4,19 +4,15 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
+/* General Container Styles */
 .container, .product-list, .training-list, .cart {
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
-    @media only screen and (max-width: 600px) {
-    .container, .product-list {
-        padding: 5px;
-        margin: 0;
-    }
-}
-
+    width: 100%;
 }
 
 img {
@@ -29,187 +25,19 @@ h1, h2, h4, p {
     margin: 10px 0;
 }
 
-.product, .training {
-    flex: 1 1 calc(100% - 20px); /* Full width by default */
-    margin: 10px;
-}
-
-@media (min-width: 600px) {
-    .product, .training {
-        flex: 1 1 calc(50% - 20px); /* Two columns on tablets */
-    }
-}
-
-@media (min-width: 900px) {
-    .product, .training {
-        flex: 1 1 calc(33.33% - 20px); /* Three columns on larger screens */
-    }
-}
-
-.floating-buttons button {
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    margin: 5px 0;
-    z-index: 1000;
-    font-size: 1em;
-    @media only screen and (max-width: 600px) {
-    .floating-buttons button {
-        width: 50px;
-        height: 50px;
-        margin: 5px;
-        transform: none; /* Remove rhombus shape */
-        border-radius: 50%;
-    }
-}
-
-}
-
-.floating-buttons {
-    display: flex;
-    flex-direction: column;
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-/* Header Styles */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-/* Menu Toggle Button */
-.menu-toggle {
-    font-size: 1.5em;
-    cursor: pointer;
-    color: #fff;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    @media only screen and (max-width: 600px) {
-    .sidebar {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-    }
-    .sidebar.active {
-        transform: translateY(0);
-    }
-}
-
-}
-
-/* Main Content Styles */
-main {
-    padding: 20px;
-    text-align: center;
-}
-
-main h3 {
-    font-size: 1.2em;
-    color: #555;
-}
-
-main h4 {
-    font-size: 1em;
-    color: #777;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-}
-
-.container {
-    margin: 20px;
-}
-head {
-    position:relative;
-    top: 40%;
-    left: 900%;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 200px;
-    background-color: #fff;
-    padding: 15px;
-    border-right: 2px solid #3498db;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: -220px; /* Hide initially */
-    transition: left 0.3s ease;
-    z-index: 1000;
-}
-
-.sidebar.active {
-    left: 0; /* Show sidebar */
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin: 40px 0;
-}
-
-.sidebar ul li a {
-    text-decoration: #3498db;
-    color: #333;
-    font-size: 29px;
-    border: 5px solid #1208c5;      /* Border around text (adjust thickness, style, and color as needed) */
-}
-    .sidebar ul li a:hover {
-        background-color: #555;
-}
-
-
-
-.product-list, .training-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 150px; /* To avoid overlap with the sidebar */
-    flex: 1;
-}
-
+/* Responsive Product and Training Cards */
 .product, .training {
     background-color: white;
     padding: 15px;
     margin: 10px;
-    border: 10px solid #ccc;
-    border-radius: 15
-    %;
-    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Default full width */
 }
 
 .product img, .training img {
-    width: 100%; /* Set width to 100% */
+    width: 100%;
     height: auto;
 }
 
@@ -228,46 +56,80 @@ head {
     color: #e74c3c;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    margin-top: 20px;
-}
-
+/* Floating Buttons */
 .floating-buttons {
     position: fixed;
     right: 10px;
     bottom: 10px;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
 }
 
 .floating-buttons button {
-    display: block;
     margin: 5px 0;
     padding: 10px 15px;
     background-color: #3498db;
     color: white;
     border: none;
-    border-radius: 50%; /* Circular shape */
+    border-radius: 50%;
     cursor: pointer;
-    transform: rotate(45deg); /* Rhombus shape */
 }
 
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    padding: 15px;
+    border-right: 2px solid #3498db;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -250px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    display: block;
+    padding: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Cart Styles */
 .cart {
     position: fixed;
-    right: 220px; /* Adjusted to not overlap the floating buttons */
-    top: 50px; /* Adjusted to stay below the buttons */
+    right: 20px;
+    top: 20px;
     background: white;
     border: 1px solid #ccc;
     padding: 10px;
-    display: none; /* Hidden initially */
+    display: none;
     z-index: 1000;
 }
 
 .cart.active {
-    display: block; /* Show the cart when active */
+    display: block;
 }
 
 .cart-item {
@@ -282,98 +144,62 @@ footer {
     cursor: pointer;
 }
 
-/* For small devices like phones (max-width: 600px) */
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Responsive Styles */
 @media only screen and (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-
-    header {
-        padding: 15px;
-    }
-
-    .container {
-        width: 100%;
+    .container, .product-list, .training-list {
         padding: 10px;
     }
 
     .product, .training {
         width: 100%;
-        margin: 10px 0;
     }
 
     .sidebar {
-        width: 100%; /* Full width for sidebar on phones */
-        position: relative; /* Change sidebar behavior */
-    }
-
-    .floating-buttons {
-        flex-direction: column;
-        right: 10px;
-        bottom: 10px;
+        width: 100%;
+        position: relative;
+        border-right: none;
     }
 
     .floating-buttons button {
-        margin-bottom: 10px;
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
+        font-size: 0.8em;
     }
 
     .cart {
-        width: 100%; /* Full width for cart on phones */
+        width: 100%;
+        right: 0;
     }
 }
 
-/* For tablets (min-width: 600px and max-width: 1024px) */
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
-    body {
-        font-size: 16px;
-    }
-
-    .container {
-        width: 90%;
-        margin: 10px auto;
-    }
-
     .product, .training {
-        width: 45%; /* Two items per row */
-        margin: 10px;
-    }
-
-    .floating-buttons {
-        flex-direction: row;
-    }
-
-    .floating-buttons button {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-/* For desktops and larger screens (min-width: 1024px) */
-@media only screen and (min-width: 1024px) {
-    body {
-        font-size: 18px;
-    }
-
-    .container {
-        width: 80%;
-    }
-
-    .product, .training {
-        width: 30%; /* Three items per row */
-        margin: 10px;
+        width: 48%;
     }
 
     .sidebar {
-        width: 250px;
-        position: fixed;
-    }
-
-    .floating-buttons {
-        flex-direction: row;
-        right: 20px;
-        bottom: 20px;
+        width: 200px;
     }
 
     .floating-buttons button {
@@ -383,51 +209,19 @@ footer {
 
     .cart {
         width: 300px;
-        @media only screen and (max-width: 600px) {
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .product, .training {
+        width: 30%;
+    }
+
+    .sidebar {
+        width: 250px;
+    }
+
     .cart {
-        width: 100%;
-        top: 0;
-        right: 0;
-        border: none;
-        border-top: 2px solid #ccc;
+        width: 400px;
     }
-}
-
-    }
-}
-/* Dropdown styles for product page */
-.dropdown-toggle {
-    cursor: pointer;
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 5px;
-    @media only screen and (max-width: 600px) {
-    .dropdown-content {
-        margin-left: 0;
-        padding: 10px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-    }
-    .dropdown-content li {
-        font-size: 14px;
-        padding: 5px;
-    }
-}
-
-}
-
-.dropdown-content {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin-left: 15px;
-}
-
-.dropdown-content li {
-    margin-bottom: 5px;
-    color: #666;
-}
-
-.show {
-    display: block;
 }
