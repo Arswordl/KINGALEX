@@ -10,6 +10,13 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
+    @media only screen and (max-width: 600px) {
+    .container, .product-list {
+        padding: 5px;
+        margin: 0;
+    }
+}
+
 }
 
 img {
@@ -46,6 +53,16 @@ h1, h2, h4, p {
     margin: 5px 0;
     z-index: 1000;
     font-size: 1em;
+    @media only screen and (max-width: 600px) {
+    .floating-buttons button {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        transform: none; /* Remove rhombus shape */
+        border-radius: 50%;
+    }
+}
+
 }
 
 .floating-buttons {
@@ -80,6 +97,21 @@ header h1 {
     position: absolute;
     top: 20px;
     right: 20px;
+    @media only screen and (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+    .sidebar.active {
+        transform: translateY(0);
+    }
+}
+
 }
 
 /* Main Content Styles */
@@ -351,6 +383,16 @@ footer {
 
     .cart {
         width: 300px;
+        @media only screen and (max-width: 600px) {
+    .cart {
+        width: 100%;
+        top: 0;
+        right: 0;
+        border: none;
+        border-top: 2px solid #ccc;
+    }
+}
+
     }
 }
 /* Dropdown styles for product page */
@@ -359,6 +401,19 @@ footer {
     color: #333;
     font-weight: bold;
     margin-bottom: 5px;
+    @media only screen and (max-width: 600px) {
+    .dropdown-content {
+        margin-left: 0;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+    }
+    .dropdown-content li {
+        font-size: 14px;
+        padding: 5px;
+    }
+}
+
 }
 
 .dropdown-content {
