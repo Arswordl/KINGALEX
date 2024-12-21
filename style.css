@@ -6,6 +6,11 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
+.digital-world-border {
+    border-top: 2px solid #333; /* Adjust thickness and color as needed */
+    width: 100%; /* Full width of the screen */
+    margin: 0 auto; /* Center the border */
+}
 
 /* General Container Styles */
 .container, .product-list, .training-list, .cart {
@@ -224,4 +229,10 @@ footer {
     .cart {
         width: 400px;
     }
+    .footer-border {
+    border-top: 2px solid #333; /* Adjust thickness and color as needed */
+    width: 100%; /* Full width of the screen */
+    margin: 10px 0; /* Add spacing if needed */
+}
+
 }
